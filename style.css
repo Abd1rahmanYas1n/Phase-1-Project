@@ -36,3 +36,17 @@ button {
   cursor:pointer;background:var(--brand);border-color:transparent;color:#fff;font-weight:600;
 }
 button.secondary{background:transparent;border-color:rgba(255,255,255,.18)}
+
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.badge{padding:5px 8px;border-radius:999px;font-size:.75rem;border:1px solid rgba(255,255,255,.18);color:var(--muted)}
+.provider{display:flex;gap:12px;align-items:flex-start;padding:12px 10px;border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:10px}
+.provider strong{display:block}
+.row{display:flex;gap:8px}
+.row>*{flex:1}
+.muted{color:var(--muted);font-size:.9rem}
+.score{font-weight:800;color:var(--accent)}
+.list{max-height:420px;overflow:auto;padding-right:6px}
+.inline{display:inline-block}
+.hint{font-size:.8rem;color:var(--muted);margin-top:6px}
+.footer{margin-top:18px;font-size:.8rem;color:var(--muted)}
+
