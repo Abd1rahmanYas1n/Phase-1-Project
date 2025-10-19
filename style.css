@@ -31,3 +31,8 @@ input,select,textarea,button {
   width:100%;padding:10px 12px;border-radius:12px;
   border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--text);
 }
+textarea{min-height:96px;resize:vertical}
+button {
+  cursor:pointer;background:var(--brand);border-color:transparent;color:#fff;font-weight:600;
+}
+button.secondary{background:transparent;border-color:rgba(255,255,255,.18)}
