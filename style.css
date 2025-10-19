@@ -1,0 +1,8 @@
+:root {
+  --bg:#0b1020; --panel:#111936; --text:#e7ecff;
+  --muted:#b7c0e0; --brand:#2f7adf; --accent:#f5b301;
+}
+[data-theme="light"] {
+  --bg:#f7f9ff; --panel:#ffffff; --text:#0c1533;
+  --muted:#3a4a7a; --brand:#1e64d6; --accent:#c48a00;
+}
