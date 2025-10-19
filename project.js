@@ -91,3 +91,16 @@ $("#themeToggle").addEventListener("click",()=>{
   const root=document.body;
   root.setAttribute("data-theme",root.getAttribute("data-theme")==="dark"?"light":"dark");
 });
+
+$("#triageForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const category=$("#category").value;
+  const incomeBand=$("#incomeBand").value;
+  const flags=new Set($$(".flag:checked").map(cb=>cb.value));
+  const place=$("#location").value.trim();
+  const urgency=scoreUrgency(flags);
+  let coords=null;
+  try{coords=await geocode(place);}catch(e){console.warn(e);}
+  const ranked=rankProvidersByFit(category,coords);
+  renderProviders(ranked.slice(0,5),$("#results"));
+});
