@@ -104,3 +104,7 @@ $("#triageForm").addEventListener("submit",async e=>{
   const ranked=rankProvidersByFit(category,coords);
   renderProviders(ranked.slice(0,5),$("#results"));
 });
+
+$("#saveSession").addEventListener("click",()=>{
+  alert("Session saved locally (placeholder)");
+});
