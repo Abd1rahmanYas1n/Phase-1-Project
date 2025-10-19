@@ -15,3 +15,13 @@ header {
   display:flex; justify-content:space-between; align-items:center;
   padding:16px 20px; background:linear-gradient(90deg,var(--panel),transparent);
 }
+header h1 {font-size:1.1rem;margin:0;font-weight:700;letter-spacing:.3px}
+.container {max-width:1100px;margin:24px auto;padding:0 16px}
+.grid {display:grid;gap:16px}
+@media (min-width:900px){.grid{grid-template-columns:360px 1fr}}
+.card {
+  background:var(--panel); border:1px solid rgba(255,255,255,.06);
+  border-radius:16px; box-shadow:0 6px 24px rgba(0,0,0,.18);
+}
+.card header {padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.card .content {padding:16px}
