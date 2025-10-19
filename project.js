@@ -108,3 +108,9 @@ $("#triageForm").addEventListener("submit",async e=>{
 $("#saveSession").addEventListener("click",()=>{
   alert("Session saved locally (placeholder)");
 });
+
+$("#search").addEventListener("input",filterProviders);
+$("#countyFilter").addEventListener("change",filterProviders);
+$("#costFilter").addEventListener("change",filterProviders);
+
+renderProviders(PROVIDERS,$("#providerList"));
