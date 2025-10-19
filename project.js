@@ -85,3 +85,9 @@ function rankProvidersByFit(category,coords){
     return {...p,_score:score};
   }).sort((a,b)=>b._score-a._score);
 }
+
+/*Main*/
+$("#themeToggle").addEventListener("click",()=>{
+  const root=document.body;
+  root.setAttribute("data-theme",root.getAttribute("data-theme")==="dark"?"light":"dark");
+});
