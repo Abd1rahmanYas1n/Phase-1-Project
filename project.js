@@ -61,3 +61,15 @@ function renderProviders(list,mount){
   });
   if(!list.length) mount.innerHTML=`<p class="muted">No providers match your filters.</p>`;
 }
+
+/*Event Handlers*/
+function filterProviders(){
+  const q=$("#search").value.trim().toLowerCase();
+  const county=$("#countyFilter").value;
+  const cost=$("#costFilter").value;
+  let list=[...PROVIDERS];
+  if(q) list=list.filter(p=>p.name.toLowerCase().includes(q)||p.areas.join(" ").toLowerCase().includes(q));
+  if(county) list=list.filter(p=>p.county===county);
+  if(cost) list=list.filter(p=>p.costBand===cost);
+  renderProviders(list,$("#providerList"));
+}
