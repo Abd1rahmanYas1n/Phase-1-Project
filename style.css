@@ -50,3 +50,7 @@ button.secondary{background:transparent;border-color:rgba(255,255,255,.18)}
 .hint{font-size:.8rem;color:var(--muted);margin-top:6px}
 .footer{margin-top:18px;font-size:.8rem;color:var(--muted)}
 
+a{color:var(--accent);text-decoration:none}
+.kyc-list{padding-left:18px}
+.printable{background:#fff;color:#000;padding:16px;border-radius:12px}
+.toolbar{display:flex;gap:8px;align-items:center}
