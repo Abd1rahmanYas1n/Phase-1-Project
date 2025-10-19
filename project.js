@@ -18,3 +18,13 @@ function haversine(lat1, lon1, lat2, lon2){
   const a = Math.sin(dLat/2)**2 + Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLon/2)**2;
   return 2*R*Math.asin(Math.sqrt(a));
 }
+
+async function geocode(place){
+  if(!place) return null;
+  const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(place)}&limit=1`;
+  const res = await fetch(url,{headers:{"Accept":"application/json"}});
+  if(!res.ok) throw new Error("Geocoding failed");
+  const data = await res.json();
+  if(!data.length) return null;
+  return {lat:parseFloat(data[0].lat),lon:parseFloat(data[0].lon),display:data[0].display_name};
+}
