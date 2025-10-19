@@ -28,3 +28,14 @@ async function geocode(place){
   if(!data.length) return null;
   return {lat:parseFloat(data[0].lat),lon:parseFloat(data[0].lon),display:data[0].display_name};
 }
+
+/*Rules Engine */
+function scoreUrgency(flags){
+  let score = 0;
+  if(flags.has("notice")) score+=2;
+  if(flags.has("deadline")) score+=3;
+  if(flags.has("risk")) score+=5;
+  const band = score>=6?"High":score>=3?"Medium":"Low";
+  return {score,band};
+}
+function eligibleForAid(incomeBand){return incomeBand==="low";}
