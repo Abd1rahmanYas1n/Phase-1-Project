@@ -39,3 +39,25 @@ function scoreUrgency(flags){
   return {score,band};
 }
 function eligibleForAid(incomeBand){return incomeBand==="low";}
+
+/*Renderers*/
+function renderProviders(list,mount){
+  mount.innerHTML="";
+  list.forEach(p=>{
+    const div=document.createElement("div");
+    div.className="provider";
+    div.innerHTML=`
+      <div style="flex:1">
+        <strong>${p.name}</strong>
+        <div class="muted">${p.county} • Areas: ${p.areas.join(", ")} • Langs: ${p.langs.join(", ")}</div>
+        <div class="badges">
+          <span class="badge">Cost: ${p.costBand}</span>
+          ${p._distanceKm?`<span class="badge">~${p._distanceKm.toFixed(1)} km</span>`:""}
+        </div>
+      </div>
+      <div><a class="inline" href="https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}" target="_blank">Map ↗</a></div>
+    `;
+    mount.appendChild(div);
+  });
+  if(!list.length) mount.innerHTML=`<p class="muted">No providers match your filters.</p>`;
+}
