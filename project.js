@@ -7,3 +7,8 @@ const PROVIDERS = [
   { id:6, name:"Nairobi Family Law Group", county:"Nairobi", areas:["Family"], langs:["English","Swahili"], costBand:"mid", lat:-1.29, lon:36.82 }
 ];
 
+/*
+ * Utilities
+ */
+const $ = sel => document.querySelector(sel);
+const $$ = sel => Array.from(document.querySelectorAll(sel));
