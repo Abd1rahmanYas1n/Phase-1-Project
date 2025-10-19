@@ -73,3 +73,15 @@ function filterProviders(){
   if(cost) list=list.filter(p=>p.costBand===cost);
   renderProviders(list,$("#providerList"));
 }
+
+function rankProvidersByFit(category,coords){
+  return PROVIDERS.map(p=>{
+    let score=p.areas.includes(category)?10:0;
+    if(coords){
+      const d=haversine(coords.lat,coords.lon,p.lat,p.lon);
+      p._distanceKm=d;
+      score+=Math.max(0,10-Math.min(d/5,10));
+    }
+    return {...p,_score:score};
+  }).sort((a,b)=>b._score-a._score);
+}
